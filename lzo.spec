@@ -1,7 +1,7 @@
-Summary:	LZO - a real-time data compression library
+Summary:	Portable lossless data compression library
 Name:		lzo
 Version:	2.06
-Release:	1
+Release:	2
 License:	GPL
 Group:		Libraries
 Source0:	http://www.oberhumer.com/opensource/lzo/download/%{name}-%{version}.tar.gz
@@ -15,20 +15,6 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 LZO is a portable lossless data compression library written in ANSI C.
-It implements a number of algorithms with the following features:
-- Decompression is simple and *very* fast.
-- Requires no memory for decompression.
-- Compression is pretty fast.
-- Requires 64 kB of memory for compression.
-- Allows you to dial up extra compression at a speed cost in the
-  compressor. The speed of the decompressor is not reduced.
-- Includes compression levels for generating pre-compressed data which
-  achieve a quite competitive compression ratio.
-- There is also a compression level which needs only 8 kB for
-  compression.
-- Supports overlapping compression and in-place decompression.
-- Algorithm is thread safe.
-- Algorithm is lossless.
 
 %package devel
 Summary:	LZO header files
@@ -37,14 +23,6 @@ Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files for LZO.
-
-%package static
-Summary:	LZO static library
-Group:		Development/Libraries
-Requires:	%{name} = %{version}-%{release}
-
-%description static
-Static LZO library.
 
 %prep
 %setup -q
@@ -85,8 +63,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/liblzo2.so
 %{_libdir}/liblzo2.la
 %{_includedir}/lzo
-
-%files static
-%defattr(644,root,root,755)
-%{_libdir}/liblzo2.a
 
