@@ -1,11 +1,11 @@
 Summary:	Portable lossless data compression library
 Name:		lzo
-Version:	2.06
-Release:	2
+Version:	2.08
+Release:	1
 License:	GPL
 Group:		Libraries
 Source0:	http://www.oberhumer.com/opensource/lzo/download/%{name}-%{version}.tar.gz
-# Source0-md5:	95380bd4081f85ef08c5209f4107e9f8
+# Source0-md5:	fcec64c26a0f4f4901468f360029678f
 URL:		http://www.oberhumer.com/opensource/lzo/
 BuildRequires:	autoconf
 BuildRequires:	automake
